@@ -20,7 +20,7 @@ interface Profile {
 export default function Home() {
   const basePath =
     process.env.NEXT_PUBLIC_BASE_PATH
-      ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\/+/g, '').replace(/\\/+$/g, '')}`
+      ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\/+/g, '').replace(/\/+$/g, '')}`
       : '';
   const asset = (path: string) => `${basePath}${path}`;
 
