@@ -27,9 +27,9 @@ export default function Home() {
   };
 
   const links: Link[] = [
-    { id: '1', title: 'Twitter / X', url: 'https://twitter.com' },
-    { id: '2', title: 'GitHub', url: 'https://github.com' },
-    { id: '3', title: 'Instagram', url: 'https://instagram.com' },
+    { id: '1', title: 'X', url: 'https://x.com/kz_pro_dev' },
+    { id: '2', title: 'note', url: 'https://note.com/kzpro_dev' },
+    { id: '3', title: 'AtlasHack', url: 'https://atlas-hack.vercel.app' },
   ];
 
   return (
