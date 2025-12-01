@@ -28,7 +28,7 @@ export default function Home() {
   const profile: Profile = {
     name: 'Your Name',
     bio: 'Digital Creator | Tech Enthusiast',
-    image: asset('/profile.jpg')
+    image: asset('/profile.png')
   };
 
   const links: Link[] = [
