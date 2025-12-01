@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DragControls } from 'framer-motion';
 import { GripVertical, X } from 'lucide-react';
 import styles from './LinkCard.module.css';
@@ -16,13 +16,24 @@ export const LinkCard: React.FC<LinkCardProps> = ({ id, title, url, onDelete, dr
   // Using WordPress mshots as a more reliable free alternative for screenshots
   // Requesting a vertical aspect ratio
   const previewUrl = `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=400&h=800`;
+  const [showPreview, setShowPreview] = useState(true);
 
   return (
     <div className={styles.cardWrapper}>
       <a href={url} target="_blank" rel="noopener noreferrer" className={styles.card}>
         {/* Preview Background */}
-        <div className={styles.previewBg}>
-          <img src={previewUrl} alt="Preview" className={styles.previewImage} />
+        <div
+          className={styles.previewBg}
+          style={{ background: 'linear-gradient(135deg, rgba(65,105,225,0.35), rgba(123,104,238,0.35))' }}
+        >
+          {showPreview && (
+            <img
+              src={previewUrl}
+              alt="Preview"
+              className={styles.previewImage}
+              onError={() => setShowPreview(false)}
+            />
+          )}
           <div className={styles.previewOverlay} />
         </div>
 
