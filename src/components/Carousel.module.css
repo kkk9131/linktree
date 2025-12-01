@@ -1,0 +1,88 @@
+.carouselContainer {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.scrollContainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    gap: 1rem;
+    align-items: center;
+}
+
+.scrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.spacer {
+    min-width: 15vw;
+    /* Adjust to center the first/last item */
+    flex-shrink: 0;
+}
+
+.cardWrapper {
+    scroll-snap-align: center;
+    min-width: 70vw;
+    /* Mobile width */
+    max-width: 280px;
+    /* Narrower for vertical */
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    opacity: 0.6;
+    perspective: 1000px;
+}
+
+.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 10;
+}
+
+.cardInner {
+    width: 100%;
+    height: 100%;
+}
+
+/* Desktop sizing */
+@media (min-width: 768px) {
+    .cardWrapper {
+        min-width: 280px;
+    }
+
+    .spacer {
+        min-width: calc(50vw - 140px);
+    }
+}
+
+.indicators {
+    display: flex;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.activeDot {
+    background: #00f2ff;
+    width: 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
