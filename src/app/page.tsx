@@ -22,8 +22,8 @@ export default function Home() {
   const profile: Profile = {
     name: 'Your Name',
     bio: 'Digital Creator | Tech Enthusiast',
-    // ルート相対より安全にするため相対パス指定（/linktree 配下でも解決される）
-    image: 'profile.png'
+    // リポジトリ内の固定画像（project pageでも相対パスで解決）
+    image: 'profile.jpg'
   };
 
   const links: Link[] = [
