@@ -20,8 +20,8 @@ interface Profile {
 export default function Home() {
   // 固定データ: 誰が見ても同じプロフィールとリンクが表示される
   const profile: Profile = {
-    name: 'Your Name',
-    bio: 'Digital Creator | Tech Enthusiast',
+    name: 'kazuto@solopreneur',
+    bio: 'Build in Public!!',
     // リポジトリ内の固定画像（project pageでも相対パスで解決）
     image: 'profile.jpg'
   };
