@@ -18,17 +18,12 @@ interface Profile {
 }
 
 export default function Home() {
-  const basePath =
-    process.env.NEXT_PUBLIC_BASE_PATH
-      ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\/+/g, '').replace(/\/+$/g, '')}`
-      : '';
-  const asset = (path: string) => `${basePath}${path}`;
-
   // 固定データ: 誰が見ても同じプロフィールとリンクが表示される
   const profile: Profile = {
     name: 'Your Name',
     bio: 'Digital Creator | Tech Enthusiast',
-    image: asset('/profile.png')
+    // ルート相対より安全にするため相対パス指定（/linktree 配下でも解決される）
+    image: 'profile.png'
   };
 
   const links: Link[] = [
