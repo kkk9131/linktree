@@ -11,7 +11,7 @@ interface Link {
 
 interface CarouselProps {
     links: Link[];
-    onDelete: (id: string) => void;
+    onDelete?: (id: string) => void;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ links, onDelete }) => {
